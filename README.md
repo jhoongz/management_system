@@ -10,6 +10,7 @@ This project is a Project Management System created with Django. It allows users
 - Intuitive and user-friendly interface.
 
 ## Technologies Used
+- Python
 - Django
 - HTML
 - CSS
