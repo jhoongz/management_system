@@ -34,69 +34,67 @@ To load the sample data into the database, follow these steps:
 
 ## Once in the Django shell, copy and paste the following code to load the sample data:
 
-`
-- from django.contrib.auth.models import User
-- from projects.models import Project, Task
-- from datetime import date
+`from django.contrib.auth.models import User
+from projects.models import Project, Task
+from datetime import date`
 
 # Create users (if they do not already exist in the database)
-manager1, _ = User.objects.get_or_create(username='manager1')
+`manager1, _ = User.objects.get_or_create(username='manager1')
 manager2, _ = User.objects.get_or_create(username='manager2')
-manager3, _ = User.objects.get_or_create(username='manager3')
+manager3, _ = User.objects.get_or_create(username='manager3')`
 
 # Create projects
-project1 = Project.objects.create(
+`project1 = Project.objects.create(
     name='Web Application Development',
     description='Creating a web application using Django and React.',
     start_date=date(2023, 1, 15),
     end_date=date(2023, 6, 30),
     manager=manager1
-)
+)`
 
-project2 = Project.objects.create(
+`project2 = Project.objects.create(
     name='CRM System Implementation',
     description='Implementing a CRM system for managing customers and sales.',
     start_date=date(2023, 3, 10),
     end_date=date(2023, 9, 30),
     manager=manager2
-)
+)`
 
-project3 = Project.objects.create(
+`project3 = Project.objects.create(
     name='Cloud Migration',
     description='Migrating server infrastructure to the cloud using AWS.',
     start_date=date(2023, 5, 1),
     end_date=date(2023, 11, 30),
     manager=manager3
-)
+)`
 
 # Create tasks (optional)
-task1 = Task.objects.create(
+`task1 = Task.objects.create(
     project=project1,
     name='Database Design',
     description='Designing the database structure for the web application.',
     assigned_to=manager1,
     due_date=date(2023, 2, 15),
     completed=False
-)
+)`
 
-task2 = Task.objects.create(
+`task2 = Task.objects.create(
     project=project2,
     name='Initial CRM Setup',
     description='Setting up and customizing the CRM according to the company needs.',
     assigned_to=manager2,
     due_date=date(2023, 4, 10),
     completed=False
-)
+)`
 
-task3 = Task.objects.create(
+`task3 = Task.objects.create(
     project=project3,
     name='Cloud Server Configuration',
     description='Configuring servers in the cloud using AWS.',
     assigned_to=manager3,
     due_date=date(2023, 6, 1),
     completed=False
-)
-`
+)`
 
 ## Contribution
 If you want to contribute to this project, please create a new branch for your changes and submit a pull request with your improvements.
