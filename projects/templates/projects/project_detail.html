@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'projects/css/styles.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'projects/img/favicon.ico' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ project.name }}</h1>
+    <p><strong>Descripción:</strong> {{ project.description }}</p>
+    <p><strong>Fecha de Inicio:</strong> {{ project.start_date }}</p>
+    <p><strong>Fecha de Fin:</strong> {{ project.end_date }}</p>
+    <p><strong>Manager:</strong> {{ project.manager.username }}</p>
+    <h2>Tareas:</h2>
+    <ul>
+        {% for task in project.tasks.all %}
+        <li>{{ task.name }} - {{ task.due_date }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
