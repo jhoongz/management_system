@@ -16,7 +16,7 @@ This project is a Project Management System created with Django. It allows users
 - JavaScript
 
 ## Installation
-1. Clone this repository: `git clone https://github.com/your-username/project_management_system.git`
+1. Clone this repository: `git clone https://github.com/jhoongz/project_management_system.git`
 2. Install the dependencies: `pip install -r requirements.txt`
 3. Perform database migrations: `python manage.py migrate`
 4. Start the server: `python manage.py runserver`
